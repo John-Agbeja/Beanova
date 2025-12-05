@@ -5,23 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JohnAgbeja Beanova</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f7fc; /* professional light background */
-      color: #333;
-    }
+  /* Body background - warm brown gradient */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #A67B5B, #593E2B); /* light to dark brown */
+  color: #fff; /* text color for contrast */
+}
+
+/* Header styling */
 header {
   position: relative;
   background: url('background.jpg') no-repeat center center;
   background-size: cover;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem 1rem;
   text-align: center;
-  color: black;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Transparent dark overlay */
+/* Semi-transparent brown overlay on header */
 header::before {
   content: "";
   position: absolute;
@@ -29,11 +35,11 @@ header::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.4); /* change 0.4 for more or less transparency */
+  background: rgba(139, 94, 60, 0.5); /* semi-transparent brown overlay */
   z-index: 0;
 }
 
-/* Make sure header content stays above overlay */
+/* Ensure header content stays above overlay */
 header * {
   position: relative;
   z-index: 1;
