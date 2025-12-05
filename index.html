@@ -10,23 +10,28 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #A67B5B, #593E2B); /* light to dark brown */
-  color: #fff; /* text color for contrast */
+  background: linear-gradient(135deg, #A67B5B, #593E2B); /* warm brown gradient */
+  color: #fff;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #A67B5B, #593E2B); /* warm brown gradient */
+  color: #fff;
 }
 
-/* Header styling */
+/* Header styling - logo on left */
 header {
   position: relative;
   background: url('background.jpg') no-repeat center center;
   background-size: cover;
   padding: 1rem 1rem 2rem 1rem;
-  text-align: center;
-  color: #fff;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: flex-start; /* logo on left */
+  color: #fff;
 }
-
 /* Semi-transparent brown overlay on header */
 header::before {
   content: "";
@@ -58,13 +63,28 @@ header * {
       flex-wrap: wrap;
     }
 
-    nav a {
-      color: blue;
-      padding: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
+ nav a {
+  color: #593E2B; /* brown color */
+  padding: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
 
+/* Hover effect */
+nav a:hover {
+  text-decoration: underline;
+  color: #A67B5B; /* lighter brown on hover */
+}
+
+/* Mobile view - landscape layout (horizontal scrolling) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row; /* keep horizontal for mobile landscape */
+    overflow-x: auto;    /* allow horizontal scrolling */
+  }
+  nav a {
+    flex: 0 0 auto;      /* prevent wrapping */
+  }
     nav a:hover {
       text-decoration: underline;
     }
@@ -77,16 +97,23 @@ header * {
       padding: 4rem 2rem;
     }
 
-    .button {
-      background-color: #006400;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
+   .button {
+  background-color: #e9f1ff; /* same as nav background */
+  color: #593E2B; /* brown text */
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 1rem;
+}
+/* Optional hover effect */
+.button:hover {
+  background-color: #d3e0f0; /* slightly darker/lighter shade for hover */
+}
+/* Optional hover for buttons */
+.button:hover {
+  background-color: #A67B5B; /* lighter brown on hover */
+}
     section {
       padding: 2rem;
     }
@@ -106,47 +133,55 @@ header * {
       border-radius: 10px;
     }
 
-    footer {
-      background-color: #004d00;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    /* Hamburger menu styles */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      padding: 1rem;
-    }
-
-    .bar {
-      width: 25px;
-      height: 3px;
-      background-color: blue;
-      margin: 4px 0;
-    }
-
-    #hamburger-menu {
-      display: none;
-      background-color: #e9f1ff;
-      padding: 1rem;
-    }
-
-    #hamburger-menu h3 {
-      cursor: pointer;
-      color: blue;
-      margin: 0.5rem 0;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    /* Responsive */
-    .menu-toggle {
+  footer {
+  background-color: #e9f1ff; /* same as nav background */
+  color: #593E2B; /* brown text for contrast */
+  text-align: center;
+  padding: 1rem;
+}
+ /* Hamburger fixed at top-right */
+.menu-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
   display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.bar {
+  width: 28px;
+  height: 3px;
+  background-color: black; /* changed from blue to black */
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* Hamburger menu content */
+#hamburger-menu {
+  position: fixed;
+  top: 3.5rem;
+  right: 0;
+  width: 300px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #e9f1ff;
+  padding: 1rem;
+  display: none;
+  z-index: 1000;
+  box-shadow: -3px 3px 10px rgba(0,0,0,0.2);
+}
+
+#hamburger-menu h3 {
+  cursor: pointer;
+  color: blue;
+  margin: 0.5rem 0;
+  font-size: 18px;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Optional: If you want to stack hamburger and nav vertically on small screens */
@@ -165,16 +200,21 @@ header * {
 </head>
 <body>
   <header>
-    <img src="logo.jpg" alt="Beanova Logo" class="logo">
-    <h1>JohnAgbeja Beanova</h1>
-    <p>Premium Locust Beans for you.</p>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-  </header>
+  <img src="logo.jpg" alt="Beanova Logo" class="logo">
+  <h1>JohnAgbeja Beanova</h1>
+  <p>Premium Locust Beans for you.</p>
+</header>
 
+<!-- Hamburger fixed at top-right -->
+<div class="menu-toggle" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<div id="hamburger-menu">
+  <!-- Your CEO, About, Vision, Partnership, Sponsorship sections remain unchanged -->
+</div>
   <nav>
     <a href="#about">About</a>
     <a href="#products">Products</a>
