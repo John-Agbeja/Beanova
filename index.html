@@ -5,57 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JohnAgbeja Beanova</title>
   <style>
-  /* Body background - warm brown gradient */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #A67B5B, #593E2B); /* warm brown gradient */
-  color: #fff;
-}
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #A67B5B, #593E2B); /* warm brown gradient */
-  color: #fff;
-}
+    /* Body background - warm brown gradient */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #A67B5B, #593E2B); /* warm brown gradient */
+      color: #fff;
+    }
 
-/* Header styling - logo on left */
-header {
-  position: relative;
-  background: url('background.jpg') no-repeat center center;
-  background-size: cover;
-  padding: 1rem 1rem 2rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* logo on left */
-  color: #fff;
-}
-/* Semi-transparent brown overlay on header */
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(139, 94, 60, 0.5); /* semi-transparent brown overlay */
-  z-index: 0;
-}
+    /* Header styling */
+    header {
+      position: relative;
+      background: url('background.jpg') no-repeat center center;
+      background-size: cover;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; /* logo on left */
+      color: #fff;
+    }
 
-/* Ensure header content stays above overlay */
-header * {
-  position: relative;
-  z-index: 1;
-}
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(139, 94, 60, 0.5); /* semi-transparent overlay */
+      z-index: 0;
+    }
+
+    header * {
+      position: relative;
+      z-index: 1;
+    }
+
     .logo {
       width: 100px;
       height: auto;
       border-radius: 50%;
-      margin-bottom: 1rem;
+      margin-right: 1rem;
     }
 
+    /* Nav styling */
     nav {
       background-color: #e9f1ff;
       display: flex;
@@ -63,57 +57,33 @@ header * {
       flex-wrap: wrap;
     }
 
- nav a {
-  color: #593E2B; /* brown color */
-  padding: 1rem;
-  text-decoration: none;
-  font-weight: bold;
-}
+    nav a {
+      color: #593E2B; /* brown text */
+      padding: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-/* Hover effect */
-nav a:hover {
-  text-decoration: underline;
-  color: #A67B5B; /* lighter brown on hover */
-}
-
-/* Mobile view - landscape layout (horizontal scrolling) */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: row; /* keep horizontal for mobile landscape */
-    overflow-x: auto;    /* allow horizontal scrolling */
-  }
-  nav a {
-    flex: 0 0 auto;      /* prevent wrapping */
-  }
     nav a:hover {
       text-decoration: underline;
+      color: #A67B5B; /* lighter brown on hover */
     }
 
-    .hero {
-      background: url('https://via.placeholder.com/1200x400?text=Locust+Beans') no-repeat center center;
-      background-size: cover;
-      color: black;
-      text-align: center;
-      padding: 4rem 2rem;
+    /* Buttons */
+    .button {
+      background-color: #e9f1ff; /* same as nav background */
+      color: #593E2B; /* brown text */
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 1rem;
     }
 
-   .button {
-  background-color: #e9f1ff; /* same as nav background */
-  color: #593E2B; /* brown text */
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 1rem;
-}
-/* Optional hover effect */
-.button:hover {
-  background-color: #d3e0f0; /* slightly darker/lighter shade for hover */
-}
-/* Optional hover for buttons */
-.button:hover {
-  background-color: #A67B5B; /* lighter brown on hover */
-}
+    .button:hover {
+      background-color: #d3e0f0;
+    }
+
     section {
       padding: 2rem;
     }
@@ -126,6 +96,7 @@ nav a:hover {
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       max-width: 400px;
       margin: 2rem auto;
+      color: #000;
     }
 
     .product-sample img {
@@ -133,88 +104,124 @@ nav a:hover {
       border-radius: 10px;
     }
 
-  footer {
-  background-color: #e9f1ff; /* same as nav background */
-  color: #593E2B; /* brown text for contrast */
-  text-align: center;
-  padding: 1rem;
-}
- /* Hamburger fixed at top-right */
-.menu-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  z-index: 1001;
-}
+    footer {
+      background-color: #e9f1ff; /* same as nav */
+      color: #593E2B; /* brown text */
+      text-align: center;
+      padding: 1rem;
+    }
 
-.bar {
-  width: 28px;
-  height: 3px;
-  background-color: black; /* changed from blue to black */
-  margin: 4px 0;
-  border-radius: 2px;
-}
+    .hero {
+      background: url('https://via.placeholder.com/1200x400?text=Locust+Beans') no-repeat center center;
+      background-size: cover;
+      color: black;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
 
-/* Hamburger menu content */
-#hamburger-menu {
-  position: fixed;
-  top: 3.5rem;
-  right: 0;
-  width: 300px;
-  max-height: 90vh;
-  overflow-y: auto;
-  background-color: #e9f1ff;
-  padding: 1rem;
-  display: none;
-  z-index: 1000;
-  box-shadow: -3px 3px 10px rgba(0,0,0,0.2);
-}
+    /* Hamburger fixed at top-right */
+    .menu-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 1001;
+    }
 
-#hamburger-menu h3 {
-  cursor: pointer;
-  color: blue;
-  margin: 0.5rem 0;
-  font-size: 18px;
-}
+    .bar {
+      width: 28px;
+      height: 3px;
+      background-color: black;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
 
-.hidden {
-  display: none;
-}
+    /* Hamburger menu content */
+    #hamburger-menu {
+      position: fixed;
+      top: 3.5rem;
+      right: 0;
+      width: 300px;
+      max-height: 90vh;
+      overflow-y: auto;
+      background-color: #e9f1ff;
+      padding: 1rem;
+      display: none;
+      z-index: 1000;
+      box-shadow: -3px 3px 10px rgba(0,0,0,0.2);
+    }
 
-/* Optional: If you want to stack hamburger and nav vertically on small screens */
-@media (max-width: 768px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    #hamburger-menu h3 {
+      cursor: pointer;
+      color: #593E2B;
+      margin: 0.5rem 0;
+      font-size: 18px;
+    }
 
-  nav {
-    flex-direction: column;
-  }
-}
+    .hidden {
+      display: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: row; /* horizontal scrolling in mobile */
+        overflow-x: auto;
+      }
+      nav a {
+        flex: 0 0 auto;
+      }
+    }
+
   </style>
 </head>
 <body>
+
   <header>
-  <img src="logo.jpg" alt="Beanova Logo" class="logo">
-  <h1>JohnAgbeja Beanova</h1>
-  <p>Premium Locust Beans for you.</p>
-</header>
+    <img src="logo.jpg" alt="Beanova Logo" class="logo">
+    <h1>JohnAgbeja Beanova</h1>
+    <p>Premium Locust Beans for you.</p>
+  </header>
 
-<!-- Hamburger fixed at top-right -->
-<div class="menu-toggle" onclick="toggleMenu()">
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-</div>
+  <!-- Hamburger fixed at top-right -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
 
-<div id="hamburger-menu">
-  <!-- Your CEO, About, Vision, Partnership, Sponsorship sections remain unchanged -->
-</div>
+  <!-- Single Hamburger Menu -->
+  <div id="hamburger-menu">
+    <h3 onclick="toggleSection('ceo')">About the CEO</h3>
+    <div id="ceo" class="hidden">
+      <img src="ceo.jpg" alt="John Agbeja" style="width:100%; max-width:300px; border-radius:10px; margin-bottom:1rem;">
+      <p>John Agbeja is a visionary entrepreneur, digital creator, and founder of JohnAgbeja Beanova...</p>
+    </div>
+
+    <h3 onclick="toggleSection('aboutus')">About Us</h3>
+    <div id="aboutus" class="hidden">
+      <p>Beanova is a fusion of Beans and Innovation...</p>
+    </div>
+
+    <h3 onclick="toggleSection('vision')">Our Vision</h3>
+    <div id="vision" class="hidden">
+      <p>We aim to become Africa’s leading brand in fermented locust beans...</p>
+    </div>
+
+    <h3 onclick="toggleSection('partnership')">Partnership</h3>
+    <div id="partnership" class="hidden">
+      <p>Join as official Beanova Partners...</p>
+    </div>
+
+    <h3 onclick="toggleSection('sponsorship')">Sponsorship</h3>
+    <div id="sponsorship" class="hidden">
+      <p>Sponsorship opportunities coming soon...</p>
+    </div>
+  </div>
+
+  <!-- Nav -->
   <nav>
     <a href="#about">About</a>
     <a href="#products">Products</a>
@@ -222,83 +229,6 @@ nav a:hover {
     <a href="#order">How to Order</a>
     <a href="#contact">Contact</a>
   </nav>
-
-<div id="hamburger-menu">
-  <h3 onclick="toggleSection('ceo')">About the CEO</h3>
-  <div id="ceo" class="hidden">
-    <img src="ceo.jpg" alt="John Agbeja" style="width:100%; max-width:300px; border-radius:10px; margin-bottom:1rem;">
-    <p>John Agbeja is a visionary entrepreneur, digital creator, and the founder of JohnAgbeja Beanova—a brand born from a passion to preserve African food heritage while embracing modern standards.</p>
-    <p>Growing up in Nigeria, John witnessed the value of traditional foods like iru (locust beans) in both nourishment and culture. But he also saw a gap—how something so cherished could be packaged and presented in a cleaner, more accessible way.</p>
-    <p>JohnAgbeja Beanova was inspired by a deep craving to elevate his late mother’s legacy. She was a dedicated locust beans seller whose resilience and commitment to quality left a lasting impression on her son. Her passing became the seed that grew into a brand—honoring her trade, her dreams, and the values she lived by.</p>
-    <p>With a background in content creation and a heart for community empowerment, John launched Beanova to provide hygienic, preservative-free locust beans that fit into today’s kitchens—both locally and globally.</p>
-    <p>More than just a business owner, John is building a movement—bringing dignity to local food processing, empowering resellers, and inspiring young Africans to think bigger with what they have in their hands.</p>
-  </div>
-
-  <h3 onclick="toggleSection('aboutus')">About Us</h3>
-  <div id="aboutus" class="hidden">
-<p>The Name Behind the Brand</p>
-<p>"JohnAgbeja" reflects the founder’s identity and personal commitment, while "Beanova" is a fusion of Beans and Innovation—capturing our mission to reimagine and modernize the traditional African locust beans for today’s world.</p>
-    <p>At JohnAgbeja Beanova, we believe that food is more than fuel—it’s a storyteller. And one of the richest stories from our land is told through iru (locust beans)—a cherished African ingredient steeped in tradition, flavor, and identity.</p>
-    <p>Born in Nigeria and deeply rooted in local culture, Beanova was founded to solve a real problem: how to preserve the authenticity of locust beans while meeting modern standards of hygiene, convenience, and presentation. We saw the need to bridge the gap between heritage and innovation—and we stepped in.</p>
-    <p>But our story runs deeper. Beanova is also a tribute to the legacy of John Agbeja’s late mother, a passionate locust beans seller who served her community with resilience, dignity, and love. Her dedication inspired a vision—to take what she started and elevate it to national and global relevance.</p>
-    <ul>
-      <li>Preservative-free</li>
-      <li>Hygienically processed and packaged</li>
-      <li>Naturally fermented with care</li>
-      <li>Accessible to all—from market women to health-conscious families and export buyers</li>
-    </ul>
-    <p>We’re not just in the business of selling food—we’re on a mission to transform the face of indigenous African ingredients, rebranding them for today’s consumers and preparing them for global shelves.</p>
-    <p>Beanova is where tradition meets transformation—one scoop of locust beans at a time.</p>
-  </div>
-
-  <h3 onclick="toggleSection('vision')">Our Vision</h3>
-  <div id="vision" class="hidden">
-    <p>At JohnAgbeja Beanova, our vision is bold yet rooted: to become Africa’s leading and most trusted brand in fermented locust beans, recognized across the globe for our commitment to quality, cultural pride, and community empowerment.</p>
-    <p>We envision a future where:</p>
-    <ul>
-      <li>Locust beans are valued globally for their flavor, health benefits, and cultural story</li>
-      <li>African food products are proudly packaged and exported worldwide</li>
-      <li>Local farmers and traders build sustainable income through a structured value chain</li>
-      <li>Youth find pride and opportunity in indigenous resources</li>
-    </ul>
-    <p>Our commitment includes:</p>
-    <ul>
-      <li>Rebranding local food with modern appeal</li>
-      <li>Championing African excellence in agro-food</li>
-      <li>Fighting poverty and unemployment with purpose-driven entrepreneurship</li>
-    </ul>
-    <p>We believe we can honor the past, feed the present, and shape the future—all through the humble yet powerful locust beans.</p>
-  </div>
-
-  <h3 onclick="toggleSection('partnership')">Partnership</h3>
-  <div id="partnership" class="hidden">
-    <p>At JohnAgbeja Beanova, we believe in growing with people, not just through products. That’s why our partnership model is more than a business opportunity—it’s a pathway to empowerment.</p>
-    <p>We invite individuals—especially women, youths, and local entrepreneurs—to join us as official Beanova Partners, retailing our preservative-free, hygienically packaged locust beans.</p>
-    <h4>Why Partner with Beanova?</h4>
-    <ul>
-      <li>We supply in dozens – easy reselling with profit-friendly margins</li>
-      <li>Free branded t-shirt – wear your identity with pride</li>
-      <li>Join a movement – promote food dignity and cultural heritage</li>
-      <li>Earn and impact lives – one sale at a time</li>
-    </ul>
-    <h4>Who Can Partner?</h4>
-    <p>Students, stay-at-home parents, side hustlers, traders, or jobseekers—if you believe in our mission, this is for you.</p>
-    <h4>Requirements:</h4>
-    <ul>
-      <li>Passion for selling</li>
-      <li>Basic market or community connection</li>
-      <li>Willingness to grow and represent Beanova</li>
-    </ul>
-    <p><strong>Partner with purpose. Profit with pride. Grow with Beanova.</strong></p>
-    <p>Contact us via WhatsApp to register today.</p>
-  </div>
-
-  <h3 onclick="toggleSection('sponsorship')">Sponsorship</h3>
-  <div id="sponsorship" class="hidden">
-    <p>Our sponsorship package is coming soon!</p>
-    <p>Stay tuned to support food education, heritage preservation, and grassroots empowerment through our upcoming initiatives.</p>
-  </div>
-</div>
 
   <section class="hero">
     <h2>Fresh & Natural Locust Beans</h2>
@@ -308,7 +238,7 @@ nav a:hover {
 
   <section id="about">
     <h2>About Us</h2>
-    <p>JohnAgbeja Beanova is committed to delivering clean, quality locust beans to every Nigerian home. Our product is traditionally processed, free from preservatives, and packed with natural flavor.</p>
+    <p>JohnAgbeja Beanova is committed to delivering clean, quality locust beans...</p>
   </section>
 
   <section id="products">
@@ -321,63 +251,43 @@ nav a:hover {
     <div class="product-sample">
       <h3>₦500 Locust Beans Pack</h3>
       <img src="product.jpg" alt="500 Naira Locust Beans">
-      <p>Affordable, fresh, and hygienically packed locust beans perfect for single use. Great taste, natural flavor!</p>
+      <p>Affordable, fresh, and hygienically packed locust beans perfect for single use.</p>
     </div>
   </section>
 
   <section id="benefits">
     <h2>Health Benefits</h2>
-    <p>Locust beans are rich in protein, promote good digestion, reduce blood pressure, and boost immunity. They are a great natural alternative to seasoning cubes.</p>
+    <p>Locust beans are rich in protein, promote good digestion, reduce blood pressure, and boost immunity.</p>
   </section>
 
- <section id="order">
-  <h2>How to Order</h2>
-  <p>To place your order, simply contact us on WhatsApp or fill out the Order Form. We deliver worldwide and accept any kind of transaction.</p>
-  <a class="button" href="https://wa.me/2349113486251" target="_blank">Order via WhatsApp</a>
-  <a class="button" href="https://bit.ly/Beanova-Form" target="_blank" style="background-color:#004d00; margin-left:10px;">
-    Fill Order Form
-  </a>
-</section>
+  <section id="order">
+    <h2>How to Order</h2>
+    <p>To place your order, contact us on WhatsApp or fill out the Order Form.</p>
+    <a class="button" href="https://wa.me/2349113486251" target="_blank">Order via WhatsApp</a>
+    <a class="button" href="https://bit.ly/Beanova-Form" target="_blank">Fill Order Form</a>
+  </section>
 
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:25px; margin-top:20px;">
+      <a href="https://wa.me/2349113486251" target="_blank">
+        <img src="phone.png" alt="Phone" style="width:40px; height:40px;">
+      </a>
+      <a href="mailto:johnagbejabeanova@gmail.com" target="_blank">
+        <img src="email.png" alt="Email" style="width:40px; height:40px;">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61570088393143" target="_blank">
+        <img src="facebook.png" alt="Facebook" style="width:40px; height:40px;">
+      </a>
+      <a href="https://instagram.com/johnagbeja_beanova" target="_blank">
+        <img src="instagram.png" alt="Instagram" style="width:40px; height:40px;">
+      </a>
+      <a href="https://tiktok.com/@johnagbeja_beanova" target="_blank">
+        <img src="tiktok.png" alt="TikTok" style="width:40px; height:40px;">
+      </a>
+    </div>
+  </section>
 
- <section id="contact">
-  <h2>Contact Us</h2>
-  <p>Tap any icon below to connect with us directly.</p>
-
-  <div style="
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:25px;
-      margin-top:20px;
-    ">
-
-    <!-- Phone / WhatsApp -->
-    <a href="https://wa.me/2349113486251" target="_blank">
-      <img src="phone.png" alt="Phone" style="width:40px; height:40px;">
-    </a>
-
-    <!-- Email -->
-    <a href="mailto:johnagbejabeanova@gmail.com" target="_blank">
-      <img src="email.png" alt="Email" style="width:40px; height:40px;">
-    </a>
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/profile.php?id=61570088393143" target="_blank">
-      <img src="facebook.png" alt="Facebook" style="width:40px; height:40px;">
-    </a>
-
-    <!-- Instagram -->
-    <a href="https://instagram.com/johnagbeja_beanova" target="_blank">
-      <img src="instagram.png" alt="Instagram" style="width:40px; height:40px;">
-    </a>
-
-    <!-- TikTok -->
-    <a href="https://tiktok.com/@johnagbeja_beanova" target="_blank">
-      <img src="tiktok.png" alt="TikTok" style="width:40px; height:40px;">
-    </a>
-
-  </div>
-</section>
   <footer>
     <p>&copy; 2025 JohnAgbeja Beanova. All rights reserved.</p>
   </footer>
@@ -393,5 +303,6 @@ nav a:hover {
       section.classList.toggle("hidden");
     }
   </script>
+
 </body>
-                         </html>
+</html>
